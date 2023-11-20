@@ -1,0 +1,77 @@
+<h1>home works!</h1>
+<ng-template>to</ng-template>
+    <h1>Welcome to Angular App!</h1>
+
+<!-- structural directive ngIf Section -->
+    <div *ngIf="isUserLoggedIn; else loginMessage">
+      <p>Hello, User! You are logged in.</p>
+      <button (click)="logout()">Logout</button>
+    </div>
+
+    <ng-template #loginMessage>
+      <p>Please log in to access the content.</p>
+      <button (click)="login()">Login</button>
+    </ng-template>
+
+
+    
+      <!-- structural directive ngFor Section -->
+      <ul>
+        <li *ngFor="let item of items">{{ item }}</li>
+      </ul>
+
+      <!-- structural directive ngSwitch Section -->
+      <div [ngSwitch]="userRole">
+        <div *ngSwitchCase="'Admin'">Welcome, Admin! You have special privileges.</div>
+        <div *ngSwitchCase="'User'">Welcome, User! Enjoy your experience.</div>
+        <div *ngSwitchDefault>Welcome! Your role is not defined.</div>
+      </div>
+
+
+      <!-- Attribute directive ngClass Section -->
+      <h1 [ngClass]="titleClass">prohack world</h1>
+
+      <!-- Attribute directive ngClass Section -->
+      <div [ngClass]="checkValue==='prohack world' ?'custom-class': 'error-status'">prohack world</div>
+
+
+
+      <!-- Attribute directive ngStyle Section -->
+      <div [ngStyle]="divStylings">Prohack world</div>
+
+      
+      <div [ngStyle]="checkStatus? divSuccessStylings:divErrorStylings">Prohack world</div>
+
+      <!-- custom directive Section -->
+      <h1 appCustom>this is custom heading</h1>
+
+
+
+      <!-- Services in angular Section -->
+      <!-- <button (click)="getData()">Get data</button> -->
+     <!-- Services in angular Section -->
+      <input placeholder="Username"[(ngModel)]="Username">
+      <button (click)="setData()">Set data</button>
+      <button (click)="getData()">Get data</button>
+
+   <!-- Two way binding in angular Section -->
+
+       city:<input type="text"[(ngModel)]="city">
+         <p>{{city}}</p>
+        <button (click)="updateCity()">update</button>
+
+
+         <!-- String Interpolation in angular Section -->
+
+         <h1>{{title}}</h1>
+
+         
+         <!-- Event binding in angular Section -->
+
+         <button (click)="increment()">click</button>
+
+         <h1>counter:{{counter}}</h1>
+
+          <!-- property binding in angular Section -->
+         name:<input type="text">
+         <button [disabled]=isdisabled>submit</button>
